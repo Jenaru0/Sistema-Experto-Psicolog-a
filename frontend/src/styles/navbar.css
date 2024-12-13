@@ -1,53 +1,117 @@
-/* Navbar */
+/* Importa la fuente Montserrat desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+/* Navbar principal */
 .navbar {
-    position: relative; /* Cambia de fixed a relative */
-    top: 0;
-    left: 0;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Distribuye el logo y las opciones */
     width: 100%;
-    z-index: 1030; /* Asegura que el navbar esté encima del contenido */
-    background-color: #3498db;
-    padding: 10px 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para separar del contenido */
+    background-color: #1f2937; /* Azul oscuro profesional */
+    padding: 15px 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra elegante */
+    border-bottom: 2px solid #4b5563; /* Línea inferior sutil */
+    box-sizing: border-box; /* Incluye padding en el ancho total */
+    overflow: hidden; /* Evita desbordamientos */
+    position: sticky;
+    top: 0;
+    z-index: 1030;
 }
 
-/* Marca y logo */
+/* Logo y marca */
 .navbar-brand {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: #fff;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #f9fafb; /* Blanco limpio */
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    white-space: nowrap; /* Evita que el texto del logo haga salto de línea */
+    margin-right: 20px; /* Espacio entre el logo y las opciones */
+    transition: color 0.3s ease;
+    flex-shrink: 0; /* Evita que el logo se reduzca */
 }
 
-/* Enlaces del navbar */
+.navbar-brand:hover {
+    color: #fbbf24; /* Amarillo profesional */
+}
+
+/* Icono del logo */
+.navbar-brand svg {
+    margin-right: 10px;
+    font-size: 2rem;
+}
+
+/* Lista de navegación */
+.navbar-nav {
+    display: flex;
+    justify-content: flex-end; /* Alinea las opciones a la derecha */
+    gap: 25px; /* Espaciado uniforme entre opciones */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-wrap: nowrap; /* Evita que las opciones se acomoden en múltiples líneas */
+    white-space: nowrap; /* Asegura que las opciones no se dividan */
+    overflow: hidden; /* Evita cualquier desbordamiento */
+    flex-grow: 1; /* Ocupa todo el espacio disponible */
+}
+
+/* Opciones del menú */
 .navbar-nav .nav-link {
     font-size: 1rem;
     font-weight: 500;
-    color: #fff;
-    margin: 0 10px;
-    transition: color 0.3s ease;
+    color: #d1d5db; /* Gris claro neutro */
+    text-decoration: none; /* Sin subrayado */
+    padding: 8px 10px; /* Espaciado interno */
+    position: relative; /* Necesario para el subrayado animado */
+    transition: color 0.3s ease; /* Transición suave del color */
+    display: inline-block; /* Asegura que la animación se aplique correctamente */
 }
 
-.navbar-nav .nav-link:hover {
-    color: #ff6f61; /* Color de hover */
+/* Subrayado animado */
+.navbar-nav .nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0; /* Inicialmente sin ancho */
+    height: 2px; /* Grosor del subrayado */
+    background-color: #fbbf24; /* Amarillo profesional */
+    transition: width 0.3s ease-in-out; /* Animación de expansión */
 }
 
-/* Ajustes responsivos */
+/* Hover: Muestra el subrayado */
+.navbar-nav .nav-link:hover::after {
+    width: 100%; /* Expande el subrayado al 100% */
+}
+
+/* Opción activa */
+.navbar-nav .nav-link.active::after {
+    width: 100%; /* Subrayado visible siempre */
+    background-color: #3b82f6; /* Azul profesional para la opción activa */
+}
+
+.navbar-nav .nav-link.active {
+    color: #3b82f6; /* Azul profesional */
+    font-weight: 600; /* Resaltado adicional */
+}
+
+/* Responsivo */
 @media (max-width: 768px) {
+    .navbar {
+        padding: 10px 15px; /* Reduce el padding en pantallas pequeñas */
+    }
+
+    .navbar-nav {
+        gap: 15px; /* Reduce el espaciado entre opciones */
+    }
+
     .navbar-brand {
-        font-size: 1.2rem; /* Ajusta el tamaño del logo en pantallas pequeñas */
+        font-size: 1.5rem; /* Ajusta el tamaño del logo */
     }
 
     .navbar-nav .nav-link {
-        font-size: 0.9rem;
+        font-size: 0.9rem; /* Texto más pequeño en pantallas pequeñas */
     }
-}
-
-/* Espaciado superior del contenido para evitar que quede cubierto por el navbar */
-.content {
-    margin-top: 0; /* Sin margen superior, ya que el navbar es relativo */
-}
-
-.navbar .nav-link.active {
-    font-weight: bold; /* Destaca el enlace activo */
-    color: #f39c12; /* Color naranja vibrante */
-    border-bottom: 2px solid #f39c12; /* Subrayado para indicar selección */
 }

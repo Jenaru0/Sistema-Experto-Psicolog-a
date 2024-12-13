@@ -4,7 +4,7 @@
   margin: 50px auto;
   display: flex;
   justify-content: center;
-  gap: 20px; /* Espaciado uniforme entre tarjetas */
+  gap: 30px; /* Espaciado uniforme entre tarjetas */
   flex-wrap: wrap; /* Ajusta las tarjetas en múltiples filas si es necesario */
   padding: 0 20px; /* Espaciado interno para márgenes laterales */
 }
@@ -13,42 +13,60 @@
 .card {
   border-radius: 15px;
   overflow: hidden;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
-  background-color: #fff;
-  max-width: 350px; /* Ancho fijo más compacto */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Sombra más elegante */
+  background-color: #fff; /* Fondo claro */
+  max-width: 340px; /* Ancho fijo */
   margin: 20px;
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  padding: 25px 15px; /* Más espacio interno */
-  font-family: 'Montserrat', sans-serif; /* Fuente Montserrat */
+  padding: 20px; /* Espaciado interno */
+  font-family: 'Montserrat', sans-serif;
+  border: 1px solid rgba(0, 0, 0, 0.05); /* Borde sutil */
 }
 
 /* Efecto hover en las tarjetas */
 .card:hover {
-  transform: translateY(-10px) scale(1.03); /* Eleva y agranda ligeramente */
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15); /* Sombra más profunda */
+  transform: translateY(-10px) scale(1.05); /* Eleva y agranda ligeramente */
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); /* Sombra más intensa */
+  border-color: #2980b9; /* Resalta el borde al pasar el cursor */
 }
 
 /* Contenido del cuerpo de las tarjetas */
 .card-body {
-  padding: 15px;
+  padding: 20px;
 }
 
 /* Título de la tarjeta */
 .card-title {
-  font-size: 1.6rem;
+  font-size: 1.5rem; /* Tamaño equilibrado */
   color: #2980b9; /* Azul profesional */
-  font-weight: 700; /* Negrita fuerte */
-  margin-bottom: 20px;
-  line-height: 1.4;
-  font-family: 'Montserrat', sans-serif; /* Fuente moderna */
+  font-weight: 700;
+  margin-bottom: 15px;
+  line-height: 1.3;
 }
 
 /* Texto descriptivo de la tarjeta */
 .card-text {
   font-size: 1.1rem;
   color: #7f8c8d; /* Gris profesional */
-  margin-bottom: 25px;
-  line-height: 1.6; /* Mejora la legibilidad */
-  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 20px;
+  line-height: 1.7; /* Mejora la legibilidad */
+}
+
+/* Botón dentro de la tarjeta (opcional) */
+.card .btn {
+  font-size: 1rem;
+  padding: 10px 20px;
+  border-radius: 25px;
+  background-color: #f39c12;
+  color: #fff;
+  border: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.card .btn:hover {
+  background-color: #e67e22;
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }

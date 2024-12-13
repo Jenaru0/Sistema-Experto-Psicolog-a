@@ -1,48 +1,88 @@
 /* Sección Hero */
 .hero {
-  background: linear-gradient(135deg, #6dd5fa, #2980b9); /* Gradiente invertido para mayor frescura */
-  color: #fff; /* Texto blanco para contraste */
+  background: linear-gradient(135deg, #2980b9, #6dd5fa); /* Gradiente moderno */
+  color: #fff; /* Contraste de texto */
   text-align: center;
-  padding: 120px 20px; /* Margen interno más espacioso */
-  margin-top: 0; /* Elimina espacios innecesarios */
-  border-radius: 0 0 20px 20px; /* Bordes redondeados inferiores */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra para separación visual */
+  padding: 120px 20px; /* Espaciado generoso */
+  margin-top: 0; /* Elimina márgenes no deseados */
+  border-radius: 0 0 40px 40px; /* Bordes suaves */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Sombra profesional */
+  font-family: 'Montserrat', sans-serif; /* Fuente consistente */
+  overflow: hidden; /* Para evitar desbordamientos visuales */
+  text-decoration: none; /* Elimina subrayados de todo dentro del hero */
 }
 
 /* Título del Hero */
 .hero h1 {
-  font-size: 3.5rem; /* Tamaño más grande para destacar */
-  font-weight: 800; /* Negrita más fuerte */
-  margin-bottom: 20px;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
-  font-family: 'Montserrat', sans-serif; /* Fuente moderna */
-  line-height: 1.2; /* Mejora la legibilidad */
+  font-size: 4rem; /* Tamaño destacado */
+  font-weight: 800; /* Negrita sólida */
+  margin-bottom: 30px;
+  text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3); /* Sombra refinada */
+  line-height: 1.4; /* Mejora visual */
+  letter-spacing: 1px; /* Espaciado entre letras */
+  text-decoration: none; /* Elimina cualquier subrayado */
 }
 
 /* Texto descriptivo del Hero */
 .hero p {
-  font-size: 1.5rem; /* Texto más grande */
-  font-weight: 400; /* Negrita ligera */
+  font-size: 1.5rem; /* Ajuste elegante */
+  font-weight: 400; /* Peso ligero para balancear */
   margin-bottom: 40px;
-  font-family: 'Montserrat', sans-serif; /* Fuente Montserrat */
-  line-height: 1.6; /* Espaciado más amplio */
+  line-height: 1.8; /* Espaciado más amplio */
+  color: rgba(255, 255, 255, 0.95); /* Texto sutilmente atenuado */
+  max-width: 800px; /* Limita el ancho para legibilidad */
+  margin-left: auto; /* Centrado horizontal */
+  margin-right: auto; /* Centrado horizontal */
+  text-decoration: none; /* Sin subrayado */
 }
 
 /* Botón del Hero */
 .hero .btn {
-  font-size: 1.3rem;
-  padding: 15px 40px; /* Botón más grande */
-  border-radius: 50px;
-  background-color: #f39c12; /* Naranja vibrante */
-  color: #fff;
+  font-size: 1.3rem; /* Tamaño adecuado para CTA */
+  padding: 15px 40px; /* Dimensiones amplias */
+  border-radius: 50px; /* Bordes redondeados */
+  background-color: #f39c12; /* Color vibrante */
+  color: #fff; /* Contraste claro */
   border: none;
-  font-weight: 700; /* Texto destacado */
-  transition: all 0.4s ease; /* Transiciones más fluidas */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para resaltar el botón */
+  font-weight: 700; /* Destacado */
+  transition: all 0.3s ease-in-out; /* Suavidad en las transiciones */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Sombras profundas */
+  text-transform: uppercase; /* Mayúsculas estilizadas */
+  letter-spacing: 1.2px; /* Espaciado entre letras */
+  text-decoration: none; /* Sin subrayado */
 }
 
 .hero .btn:hover {
-  background-color: #e67e22; /* Naranja más oscuro */
-  transform: translateY(-5px) scale(1.1); /* Efecto de elevación y agrandamiento */
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Sombra más profunda */
+  background-color: #e67e22; /* Cambia a un tono más oscuro */
+  transform: translateY(-5px) scale(1.1); /* Movimiento elegante */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Sombra más intensa */
+}
+
+/* Animaciones sutiles */
+.hero h1, .hero p, .hero .btn {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s ease forwards; /* Animación fluida */
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Links dentro de Hero */
+.hero a {
+  text-decoration: none; /* Asegura que no haya subrayado en ningún enlace */
+  color: inherit; /* Mantiene el color del texto */
+  transition: color 0.2s ease; /* Suave transición para cambios de color */
+}
+
+.hero a:hover {
+  color: #f39c12; /* Color destacado en hover */
 }
