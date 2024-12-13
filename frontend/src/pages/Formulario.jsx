@@ -8,7 +8,7 @@ function Formulario({ usuario, setUsuario, onComplete }) {
       onComplete();
     } else {
       alert(
-        "Por favor, completa tu nombre y asegura que la edad sea 0 o mayor."
+          "Por favor, completa tu nombre y asegura que la edad sea 0 o mayor."
       );
     }
   };
@@ -19,33 +19,40 @@ function Formulario({ usuario, setUsuario, onComplete }) {
   };
 
   return (
-    <div className="formulario-container">
-      <div className="formulario">
-        <h2>Completa tus datos</h2>
-        <p className="formulario-descripcion">
-          Esto nos ayudará a personalizar tu experiencia.
-        </p>
-        <form onSubmit={handleSubmit}>
-          <input
-            type="text"
-            placeholder="Nombre"
-            value={usuario.nombre}
-            onChange={(e) => setUsuario({ ...usuario, nombre: e.target.value })}
-            className="form-control"
-          />
-          <input
-            type="number"
-            placeholder="Edad"
-            value={usuario.edad}
-            onChange={handleEdadChange}
-            className="form-control"
-          />
-          <button type="submit" className="btn-primary">
-            Iniciar
-          </button>
-        </form>
+      <div className="formulario-container">
+        <div className="formulario">
+          <h2>Completa tus datos</h2>
+          <p className="formulario-descripcion">
+            Ayúdanos a personalizar tu experiencia respondiendo estas preguntas
+            básicas.
+          </p>
+          <form onSubmit={handleSubmit}>
+            <div className="form-group">
+              <input
+                  type="text"
+                  placeholder="Nombre"
+                  value={usuario.nombre}
+                  onChange={(e) =>
+                      setUsuario({ ...usuario, nombre: e.target.value })
+                  }
+                  className="form-control"
+              />
+            </div>
+            <div className="form-group">
+              <input
+                  type="number"
+                  placeholder="Edad"
+                  value={usuario.edad}
+                  onChange={handleEdadChange}
+                  className="form-control"
+              />
+            </div>
+            <button type="submit" className="btn-primary">
+              Iniciar
+            </button>
+          </form>
+        </div>
       </div>
-    </div>
   );
 }
 

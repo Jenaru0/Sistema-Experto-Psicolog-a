@@ -2,25 +2,49 @@
 .resultados {
   text-align: center;
   margin: 50px auto;
-  max-width: 650px;
-  padding: 30px;
-  background-color: #ffffff;
-  border-radius: 15px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  padding: 40px;
+  background: linear-gradient(135deg, #ffffff, #f7f9fc); /* Gradiente suave */
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); /* Sombra destacada */
+  animation: fadeIn 1s ease; /* Animación al aparecer */
 }
 
 /* Título */
 .resultados h2 {
   color: #2980b9;
-  font-size: 2rem;
-  margin-bottom: 20px;
+  font-size: 2.4rem; /* Tamaño más destacado */
+  margin-bottom: 30px;
+  font-weight: bold;
+  letter-spacing: 1px; /* Espaciado entre letras */
 }
 
 /* Texto descriptivo */
 .resultados p {
   font-size: 1.2rem;
   color: #7f8c8d;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+  line-height: 1.8; /* Mejora legibilidad */
+}
+
+/* Tabla */
+.resultados table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.resultados th, .resultados td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  font-size: 1rem;
+  text-align: left;
+}
+
+.resultados th {
+  background-color: #f3f3f3;
+  color: #2980b9;
+  font-weight: bold;
 }
 
 /* Botones */
@@ -29,33 +53,73 @@
   gap: 20px;
   justify-content: center;
   flex-wrap: wrap;
+  margin-top: 30px;
 }
 
 .btn {
-  padding: 10px 30px;
+  padding: 15px 40px;
   font-size: 1.2rem;
-  border-radius: 50px;
+  font-weight: 600;
+  border-radius: 30px;
   border: none;
   cursor: pointer;
-  transition: transform 0.2s ease, background-color 0.3s ease;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Sombra inicial */
 }
 
 .btn-primary {
-  background-color: #f39c12;
+  background: linear-gradient(135deg, #f39c12, #f1c40f);
   color: white;
 }
 
 .btn-primary:hover {
-  background-color: #e67e22;
-  transform: translateY(-2px);
+  background: linear-gradient(135deg, #e67e22, #f39c12);
+  transform: translateY(-3px); /* Efecto de elevación */
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2); /* Sombra más intensa */
 }
 
 .btn-danger {
-  background-color: #3498db;
+  background: linear-gradient(135deg, #3498db, #6dd5fa);
   color: white;
 }
 
 .btn-danger:hover {
-  background-color: #2980b9;
-  transform: translateY(-2px);
+  background: linear-gradient(135deg, #2980b9, #3498db);
+  transform: translateY(-3px); /* Efecto de elevación */
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2); /* Sombra más intensa */
+}
+
+/* Gráfica */
+.resultados .chart-container {
+  width: 90%;
+  height: 300px;
+  margin: 20px auto;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .resultados {
+    padding: 30px;
+  }
+
+  .resultados h2 {
+    font-size: 2rem;
+  }
+
+  .btn {
+    font-size: 1rem;
+    padding: 12px 30px;
+  }
 }

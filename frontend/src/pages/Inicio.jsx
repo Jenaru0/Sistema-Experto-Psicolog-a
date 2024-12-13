@@ -20,14 +20,13 @@ function Inicio() {
         </div>
 
         {/* Cards Section */}
-        <div className="container">
+        <div className="cards-wrapper">
           <div className="card">
             <div className="card-body">
               <h5 className="card-title">Identifica tus Estresores</h5>
               <p className="card-text">
                 Conoce cuáles son los factores que más te generan estrés académico.
               </p>
-              <Link to="/estresores" className="btn">Leer Más</Link>
             </div>
           </div>
 
@@ -37,7 +36,6 @@ function Inicio() {
               <p className="card-text">
                 Obtén estrategias prácticas para manejar mejor el estrés.
               </p>
-              <Link to="/recomendaciones" className="btn">Explorar</Link>
             </div>
           </div>
 
@@ -48,7 +46,6 @@ function Inicio() {
                 Realiza seguimientos periódicos para evaluar cambios en tu nivel
                 de estrés.
               </p>
-              <Link to="/progreso" className="btn">Evaluar</Link>
             </div>
           </div>
         </div>
