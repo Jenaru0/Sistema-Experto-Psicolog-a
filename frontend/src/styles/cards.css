@@ -1,0 +1,54 @@
+/* Contenedor de Tarjetas */
+.container {
+  max-width: 1200px;
+  margin: 50px auto;
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Espaciado uniforme entre tarjetas */
+  flex-wrap: wrap; /* Ajusta las tarjetas en múltiples filas si es necesario */
+  padding: 0 20px; /* Espaciado interno para márgenes laterales */
+}
+
+/* Estilo de las Tarjetas */
+.card {
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  background-color: #fff;
+  max-width: 350px; /* Ancho fijo más compacto */
+  margin: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 25px 15px; /* Más espacio interno */
+  font-family: 'Montserrat', sans-serif; /* Fuente Montserrat */
+}
+
+/* Efecto hover en las tarjetas */
+.card:hover {
+  transform: translateY(-10px) scale(1.03); /* Eleva y agranda ligeramente */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15); /* Sombra más profunda */
+}
+
+/* Contenido del cuerpo de las tarjetas */
+.card-body {
+  padding: 15px;
+}
+
+/* Título de la tarjeta */
+.card-title {
+  font-size: 1.6rem;
+  color: #2980b9; /* Azul profesional */
+  font-weight: 700; /* Negrita fuerte */
+  margin-bottom: 20px;
+  line-height: 1.4;
+  font-family: 'Montserrat', sans-serif; /* Fuente moderna */
+}
+
+/* Texto descriptivo de la tarjeta */
+.card-text {
+  font-size: 1.1rem;
+  color: #7f8c8d; /* Gris profesional */
+  margin-bottom: 25px;
+  line-height: 1.6; /* Mejora la legibilidad */
+  font-family: 'Montserrat', sans-serif;
+}

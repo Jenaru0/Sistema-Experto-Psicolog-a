@@ -1,0 +1,48 @@
+/* Sección Hero */
+.hero {
+  background: linear-gradient(135deg, #6dd5fa, #2980b9); /* Gradiente invertido para mayor frescura */
+  color: #fff; /* Texto blanco para contraste */
+  text-align: center;
+  padding: 120px 20px; /* Margen interno más espacioso */
+  margin-top: 0; /* Elimina espacios innecesarios */
+  border-radius: 0 0 20px 20px; /* Bordes redondeados inferiores */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra para separación visual */
+}
+
+/* Título del Hero */
+.hero h1 {
+  font-size: 3.5rem; /* Tamaño más grande para destacar */
+  font-weight: 800; /* Negrita más fuerte */
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
+  font-family: 'Montserrat', sans-serif; /* Fuente moderna */
+  line-height: 1.2; /* Mejora la legibilidad */
+}
+
+/* Texto descriptivo del Hero */
+.hero p {
+  font-size: 1.5rem; /* Texto más grande */
+  font-weight: 400; /* Negrita ligera */
+  margin-bottom: 40px;
+  font-family: 'Montserrat', sans-serif; /* Fuente Montserrat */
+  line-height: 1.6; /* Espaciado más amplio */
+}
+
+/* Botón del Hero */
+.hero .btn {
+  font-size: 1.3rem;
+  padding: 15px 40px; /* Botón más grande */
+  border-radius: 50px;
+  background-color: #f39c12; /* Naranja vibrante */
+  color: #fff;
+  border: none;
+  font-weight: 700; /* Texto destacado */
+  transition: all 0.4s ease; /* Transiciones más fluidas */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para resaltar el botón */
+}
+
+.hero .btn:hover {
+  background-color: #e67e22; /* Naranja más oscuro */
+  transform: translateY(-5px) scale(1.1); /* Efecto de elevación y agrandamiento */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Sombra más profunda */
+}

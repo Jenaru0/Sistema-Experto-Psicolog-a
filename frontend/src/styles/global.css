@@ -1,0 +1,67 @@
+/* global.css */
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden; /* Evita scroll horizontal */
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative; /* Importante para animaciones */
+}
+
+/* Barra de scroll para navegadores basados en WebKit (Chrome, Edge) */
+::-webkit-scrollbar {
+  width: 12px; /* Ancho del scroll */
+  height: 12px; /* Ancho para scroll horizontal */
+}
+
+::-webkit-scrollbar-track {
+  background: linear-gradient(180deg, #f8f9fa, #e9ecef); /* Fondo suave con gradiente */
+  border-radius: 12px; /* Bordes redondeados */
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1); /* Sombra sutil interna */
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #6c757d, #495057); /* Gradiente en el thumb */
+  border-radius: 12px; /* Bordes completamente redondeados */
+  box-shadow: inset 2px 2px 5px rgba(255, 255, 255, 0.3),
+  inset -2px -2px 5px rgba(0, 0, 0, 0.2); /* Efecto 3D */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #495057, #343a40); /* Hover: tono más oscuro */
+  box-shadow: inset 2px 2px 7px rgba(255, 255, 255, 0.4),
+  inset -2px -2px 7px rgba(0, 0, 0, 0.3); /* Hover: sombra más intensa */
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent; /* Esquinas transparentes */
+}
+
+/* Scroll para Firefox */
+* {
+  scrollbar-width: thin; /* Barra delgada */
+  scrollbar-color: #6c757d #f8f9fa; /* Gris oscuro para el thumb, gris claro para el track */
+}
+
+/* Contenedor con scroll personalizado */
+.scroll-container {
+  max-height: 400px; /* Limita la altura para forzar el scroll */
+  overflow-y: auto; /* Scroll vertical */
+  border: 1px solid #dee2e6; /* Borde claro acorde a Bootstrap */
+  border-radius: 12px; /* Bordes redondeados */
+  padding: 15px; /* Espaciado interno */
+  background-color: #ffffff; /* Fondo blanco */
+}

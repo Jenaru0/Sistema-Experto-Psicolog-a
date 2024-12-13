@@ -1,0 +1,140 @@
+/* Contenedor principal de información */
+.informacion-container {
+  margin: 50px auto;
+  max-width: 1200px;
+  padding: 30px;
+  background-color: #f4f6f7; /* Fondo gris claro */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  font-family: 'Montserrat', sans-serif; /* Fuente Montserrat */
+}
+
+/* Título principal */
+.informacion-container h1 {
+  color: #2980b9; /* Azul profesional */
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif; /* Fuente Montserrat */
+}
+
+/* Secciones */
+.informacion-container .section {
+  margin-bottom: 40px;
+}
+
+/* Títulos de sección */
+.informacion-container .section-title {
+  color: #2980b9; /* Azul profesional */
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  text-align: left;
+  border-bottom: 2px solid #2980b9;
+  padding-bottom: 5px;
+  font-family: 'Montserrat', sans-serif; /* Fuente Montserrat */
+}
+
+/* Texto del párrafo */
+.informacion-container p {
+  font-size: 1.1rem;
+  color: #7f8c8d; /* Gris profesional */
+  line-height: 1.8; /* Mejora la legibilidad */
+  margin-bottom: 20px;
+  text-align: justify;
+  font-family: 'Montserrat', sans-serif; /* Fuente Montserrat */
+}
+
+/* Listas */
+.informacion-container .list {
+  margin-left: 20px;
+  list-style-type: disc; /* Viñetas */
+  font-size: 1.1rem;
+  color: #7f8c8d; /* Gris profesional */
+  font-family: 'Montserrat', sans-serif; /* Fuente Montserrat */
+}
+
+.informacion-container .list li {
+  margin-bottom: 10px;
+}
+
+/* Subtítulos */
+.informacion-container .sub-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-top: 25px;
+  color: #2980b9;
+  font-family: 'Montserrat', sans-serif; /* Fuente Montserrat */
+}
+
+/* Texto en negrita */
+.informacion-container strong {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+/* Ajustes en los títulos */
+.informacion-container .sub-title,
+.informacion-container .section-title {
+  font-size: 1.6rem;
+  font-family: 'Montserrat', sans-serif; /* Fuente Montserrat */
+}
+
+/* Ajustes Responsivos */
+@media (max-width: 768px) {
+  .informacion-container {
+      margin: 20px;
+      padding: 15px;
+  }
+
+  .informacion-container h1 {
+      font-size: 2rem;
+  }
+
+  .informacion-container .section-title {
+      font-size: 1.5rem;
+  }
+
+  .informacion-container p {
+      font-size: 1rem;
+  }
+
+  .informacion-container .sub-title {
+      font-size: 1.2rem;
+  }
+
+  .informacion-container .list {
+      margin-left: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .informacion-container {
+      margin: 15px;
+      padding: 10px;
+  }
+
+  .informacion-container h1 {
+      font-size: 1.8rem;
+  }
+
+  .informacion-container .section-title {
+      font-size: 1.4rem;
+  }
+
+  .informacion-container .sub-title {
+      font-size: 1.1rem;
+  }
+
+  .informacion-container .list {
+      margin-left: 10px;
+  }
+}
+
+/* Transiciones */
+.page {
+  transition: opacity 0.5s ease-in-out;
+  height: 100%;
+  overflow: hidden; /* Para evitar el corte */
+}

@@ -1,0 +1,53 @@
+/* Navbar */
+.navbar {
+    position: relative; /* Cambia de fixed a relative */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1030; /* Asegura que el navbar esté encima del contenido */
+    background-color: #3498db;
+    padding: 10px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para separar del contenido */
+}
+
+/* Marca y logo */
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+/* Enlaces del navbar */
+.navbar-nav .nav-link {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #fff;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ff6f61; /* Color de hover */
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+    .navbar-brand {
+        font-size: 1.2rem; /* Ajusta el tamaño del logo en pantallas pequeñas */
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 0.9rem;
+    }
+}
+
+/* Espaciado superior del contenido para evitar que quede cubierto por el navbar */
+.content {
+    margin-top: 0; /* Sin margen superior, ya que el navbar es relativo */
+}
+
+.navbar .nav-link.active {
+    font-weight: bold; /* Destaca el enlace activo */
+    color: #f39c12; /* Color naranja vibrante */
+    border-bottom: 2px solid #f39c12; /* Subrayado para indicar selección */
+}

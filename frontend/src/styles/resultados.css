@@ -1,0 +1,61 @@
+/* Contenedor principal de los resultados */
+.resultados {
+  text-align: center;
+  margin: 50px auto;
+  max-width: 650px;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Título */
+.resultados h2 {
+  color: #2980b9;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+/* Texto descriptivo */
+.resultados p {
+  font-size: 1.2rem;
+  color: #7f8c8d;
+  margin-bottom: 30px;
+}
+
+/* Botones */
+.botones-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 10px 30px;
+  font-size: 1.2rem;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.btn-primary {
+  background-color: #f39c12;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #e67e22;
+  transform: translateY(-2px);
+}
+
+.btn-danger {
+  background-color: #3498db;
+  color: white;
+}
+
+.btn-danger:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+}
