@@ -1,0 +1,80 @@
+/* Contenedor principal de la página concluida */
+.concluido-container {
+    text-align: center;
+    margin: 50px auto;
+    max-width: 800px;
+    padding: 40px;
+    background: linear-gradient(135deg, #ffffff, #f7f9fc); /* Gradiente suave */
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); /* Sombra destacada */
+    animation: fadeIn 1s ease; /* Animación al aparecer */
+}
+
+/* Título */
+.concluido-container h2 {
+    color: #e74c3c;
+    font-size: 2.4rem; /* Tamaño más destacado */
+    margin-bottom: 30px;
+    font-weight: bold;
+    letter-spacing: 1px; /* Espaciado entre letras */
+}
+
+/* Texto descriptivo */
+.concluido-container p {
+    font-size: 1.2rem;
+    color: #7f8c8d;
+    margin-bottom: 20px;
+    line-height: 1.8; /* Mejora legibilidad */
+}
+
+/* Botón */
+.concluido-container .btn {
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Sombra inicial */
+}
+
+/* Botón principal */
+.concluido-container .btn-primary {
+    background: linear-gradient(135deg, #3498db, #6dd5fa);
+    color: white;
+}
+
+.concluido-container .btn-primary:hover {
+    background: linear-gradient(135deg, #2980b9, #3498db);
+    transform: translateY(-3px); /* Efecto de elevación */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2); /* Sombra más intensa */
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .concluido-container {
+        padding: 30px;
+    }
+
+    .concluido-container h2 {
+        font-size: 2rem;
+    }
+
+    .concluido-container .btn {
+        font-size: 1rem;
+        padding: 12px 30px;
+    }
+}

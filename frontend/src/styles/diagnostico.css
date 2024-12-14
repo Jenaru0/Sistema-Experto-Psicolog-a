@@ -1,155 +1,226 @@
-/* Contenedor general del diagnóstico */
+/* General body and container styles */
+body,
+html {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: linear-gradient(135deg, #f5f7fa, #e8edf3);
+  overflow: auto;
+}
+
+/* Contenedor general del cuestionario */
 .diagnostico-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  min-height: calc(100vh - 120px); /* Ajusta altura considerando el header */
-  background: linear-gradient(135deg, #f0f7ff, #dceefb); /* Fondo con gradiente */
-  padding: 20px;
+  min-height: 100vh;
+  padding: 30px;
   box-sizing: border-box;
-  width: 100%;
+  overflow-y: auto;
+  background: linear-gradient(135deg, #ffffff, #f5f5f7);
+  box-shadow: inset 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
 /* Título principal */
 .diagnostico-container h2 {
-  font-size: 2rem;
-  color: #2c3e50; /* Azul oscuro para contraste */
-  margin-bottom: 30px;
-  text-align: center;
+  font-size: 2rem; /* Reducido para un look profesional */
   font-weight: 700;
-  letter-spacing: 1px; /* Espaciado entre letras */
-  animation: fadeInDown 1s ease; /* Animación al aparecer */
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  background: linear-gradient(to right, #3b82f6, #16a085);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Indicador de progreso */
+.contador-preguntas {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #4a5568;
+  margin-bottom: 15px;
 }
 
 /* Barra de progreso */
 .barra-progreso {
-  width: 80%;
-  height: 15px;
-  background-color: #e0e0e0; /* Fondo gris claro */
-  border-radius: 12px;
-  margin-bottom: 40px;
+  width: 100%;
+  height: 8px;
+  background-color: #e2e8f0;
+  border-radius: 10px;
+  margin-bottom: 25px;
   overflow: hidden;
-  box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.1); /* Sombra interna */
-  animation: fadeInUp 1s ease; /* Animación al aparecer */
 }
 
 .progreso {
   height: 100%;
-  background: linear-gradient(90deg, #3498db, #6dd5fa); /* Barra colorida */
-  transition: width 0.4s ease; /* Transición suave */
-  border-radius: 12px;
+  background: linear-gradient(90deg, #3b82f6, #2b6cb0);
+  transition: width 0.4s ease;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(59, 130, 246, 0.3);
 }
 
-/* Contenedor principal de la pregunta */
+/* Contenedor de la dimensión */
+.dimension-contexto-container {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.dimension-titulo {
+  font-size: 1rem; /* Más pequeño y discreto */
+  font-weight: 600;
+  color: #2d3748;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.dimension-texto {
+  font-size: 1rem; /* Tamaño equilibrado */
+  color: #4a5568;
+  font-weight: 500;
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+
+/* Contenedor de la pregunta */
 .pregunta-container {
   background-color: #ffffff;
-  padding: 40px;
-  border-radius: 20px;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15); /* Sombra destacada */
-  text-align: center;
-  max-width: 600px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  max-width: 700px;
   width: 100%;
+  min-height: 220px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
-  animation: slideInUp 0.8s ease; /* Animación al aparecer */
+  padding: 20px;
+  margin: 20px auto;
+  box-sizing: border-box;
+}
+
+.pregunta-container:hover {
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
 }
 
 /* Título de la pregunta */
 .pregunta-title {
-  font-size: 1.8rem;
-  color: #2c3e50;
-  margin-bottom: 25px;
-  font-weight: 700;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #1a202c;
   text-align: center;
+  margin-bottom: 10px;
+  line-height: 1.5;
 }
 
 /* Contenedor de botones */
 .pregunta-buttons {
   display: flex;
-  flex-wrap: wrap; /* Permite mover botones a la siguiente línea si es necesario */
-  gap: 20px; /* Espaciado entre botones */
-  justify-content: space-evenly; /* Distribución uniforme */
-  width: 100%; /* Asegura que los botones se alineen al ancho del contenedor */
-  margin-top: 30px;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
 }
 
-/* Botones */
+/* Botones de opciones */
 .pregunta-opcion {
-  background-color: #3498db; /* Azul vibrante */
+  background-color: #3b82f6;
   color: white;
   border: none;
-  border-radius: 30px;
-  padding: 12px 25px;
-  font-size: 1.1rem;
-  font-weight: 600;
+  border-radius: 25px;
+  padding: 8px 18px; /* Compacto y profesional */
+  font-size: 1rem;
+  font-weight: 500;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra ligera */
-  flex: 1 1 calc(33.333% - 20px); /* Asegura que se distribuyan en filas */
-  max-width: 180px; /* Limita el ancho máximo */
-  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);
 }
 
 .pregunta-opcion:hover {
-  background-color: #2980b9; /* Azul más oscuro */
-  transform: translateY(-3px); /* Efecto de elevación */
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Sombra más intensa */
+  background-color: #2b6cb0;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(43, 108, 176, 0.4);
 }
 
-/* Ajuste de botones para pantallas pequeñas */
+.pregunta-opcion:active {
+  transform: translateY(1px);
+}
+
+/* Botones de navegación */
+.botones-navegacion {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.btn-regresar,
+.btn-continuar {
+  background-color: #16a085;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 18px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(22, 160, 133, 0.3);
+}
+
+.btn-regresar:hover,
+.btn-continuar:hover {
+  background-color: #12866e;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(18, 134, 110, 0.4);
+}
+
+.btn-regresar:active,
+.btn-continuar:active {
+  transform: translateY(1px);
+}
+
+/* Mensajes de error */
+.error-mensaje {
+  color: #e63946;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+/* Responsivo */
 @media (max-width: 768px) {
-  .pregunta-opcion {
-    flex: 1 1 calc(50% - 10px); /* Dos botones por fila */
-    padding: 10px 20px;
-    font-size: 1rem;
+  .diagnostico-container h2 {
+    font-size: 1.8rem;
   }
 
   .pregunta-container {
-    padding: 30px;
+    max-width: 95%;
+    min-height: 250px;
   }
 
-  .barra-progreso {
-    width: 90%;
+  .btn-regresar,
+  .btn-continuar {
+    font-size: 0.9rem;
+    padding: 10px 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  .pregunta-container {
+    max-width: 95%;
+    min-height: 200px;
   }
 
   .pregunta-title {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
-}
 
-/* Animaciones */
-@keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes slideInUp {
-  from {
-    opacity: 0;
-    transform: translateY(50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  .pregunta-opcion {
+    font-size: 0.9rem;
+    padding: 8px 15px;
   }
 }
