@@ -4,7 +4,7 @@
   justify-content: center;
   align-items: center;
   height: calc(100vh - 120px); /* Ajusta altura considerando el header */
-  background: linear-gradient(135deg, #74ebd5, #acb6e5); /* Fondo vibrante y colorido */
+  background: linear-gradient(135deg, #f8f9fa, #ffffff); /* Fondo claro */
   padding: 20px;
   box-sizing: border-box;
   animation: fadeIn 1.5s ease; /* Animación de entrada */
@@ -12,16 +12,17 @@
 
 /* Formulario */
 .formulario {
-  background: linear-gradient(135deg, #ffffff, #f7f9fc); /* Fondo suave */
-  border-radius: 20px;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); /* Sombra destacada */
+  background: #ffffff; /* Fondo blanco */
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Sombra sutil */
   padding: 40px;
   text-align: center;
-  max-width: 500px;
+  max-width: 450px;
   width: 100%;
   position: relative;
   animation: slideUp 1.2s ease; /* Animación de aparición */
   overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .formulario::before {
@@ -31,75 +32,82 @@
   left: -50px;
   width: 200px;
   height: 200px;
-  background: rgba(41, 128, 185, 0.15);
+  background: rgba(0, 123, 255, 0.1); /* Azul claro */
   border-radius: 50%;
-  animation: spin 10s linear infinite; /* Efecto visual decorativo */
+  animation: spin 10s linear infinite; /* Efecto decorativo */
 }
 
 .formulario:hover {
   transform: translateY(-5px); /* Elevación sutil */
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3); /* Sombra más intensa */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Sombra más intensa */
 }
 
 /* Título */
 .formulario h2 {
-  font-size: 2rem;
-  color: #2980b9; /* Azul profesional */
-  margin-bottom: 15px;
-  font-weight: 700; /* Negrita */
+  font-size: 2.2rem;
+  color: #007bff; /* Azul primario */
+  margin-bottom: 20px;
+  font-weight: 800;
   letter-spacing: 1px; /* Espaciado entre letras */
+  text-transform: uppercase;
 }
 
 /* Descripción */
 .formulario-descripcion {
   font-size: 1.1rem;
-  color: #7f8c8d; /* Gris moderno */
-  margin-bottom: 25px;
-  line-height: 1.6;
+  color: #6c757d; /* Gris medio */
+  margin-bottom: 30px;
+  line-height: 1.8;
+  font-weight: 500;
 }
 
 /* Grupo de formulario */
 .form-group {
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   text-align: left;
 }
 
 /* Campos de entrada */
 input.form-control {
   border-radius: 50px;
-  border: 2px solid #dee2e6;
+  border: 2px solid #dee2e6; /* Gris claro */
   padding: 15px 20px;
   font-size: 1rem;
   width: 100%;
   box-sizing: border-box;
   transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Animaciones suaves */
-  background: linear-gradient(135deg, #f9f9f9, #ffffff); /* Fondo sutil */
+  background: #f8f9fa; /* Fondo gris claro */
 }
 
 input.form-control:focus {
-  border-color: #2980b9; /* Azul vibrante */
+  border-color: #007bff; /* Azul primario */
   outline: none;
-  box-shadow: 0 0 15px rgba(41, 128, 185, 0.5); /* Resplandor */
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.4); /* Resplandor */
 }
 
 /* Botón */
 button.btn-primary {
-  background: linear-gradient(135deg, #2980b9, #6dd5fa); /* Botón vibrante */
+  background: #007bff; /* Azul primario */
   color: white;
   border: none;
   border-radius: 50px;
   padding: 15px 40px;
   font-size: 1.2rem;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;
   width: 100%; /* Botón ocupa el ancho completo */
 }
 
 button.btn-primary:hover {
-  background: linear-gradient(135deg, #21618c, #4aa3e8); /* Cambia de color */
+  background: #0056b3; /* Azul oscuro */
   transform: translateY(-3px); /* Movimiento sutil */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+button.btn-primary:active {
+  transform: translateY(1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Animaciones */
@@ -145,6 +153,27 @@ button.btn-primary:hover {
 
   button.btn-primary {
     font-size: 1rem;
+    padding: 12px 35px;
+  }
+}
+
+@media (max-width: 576px) {
+  .formulario {
+    padding: 20px;
+    max-width: 100%;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  input.form-control {
+    padding: 10px 15px;
+    font-size: 0.9rem;
+  }
+
+  button.btn-primary {
+    font-size: 0.95rem;
     padding: 10px 30px;
   }
 }

@@ -5,8 +5,9 @@ html {
   margin: 0;
   padding: 0;
   height: 100%;
-  background: linear-gradient(135deg, #f9fafb, #eef1f6);
+  background: #f8f9fa; /* Fondo gris claro */
   overflow: auto;
+  color: #343a40; /* Texto gris oscuro */
 }
 
 /* Contenedor general del cuestionario */
@@ -18,50 +19,47 @@ html {
   min-height: 100vh;
   padding: 30px;
   box-sizing: border-box;
+  background: #ffffff; /* Fondo principal */
+  box-shadow: inset 0 4px 20px rgba(0, 0, 0, 0.05); /* Sombra interna */
   overflow-y: auto;
-  background: linear-gradient(135deg, #ffffff, #f8f9fc);
-  box-shadow: inset 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
 /* Título principal */
 .diagnostico-container h2 {
-  font-size: 2rem;
+  font-size: 2.4rem;
   font-weight: 800;
-  color: #34495e;
+  color: #007bff; /* Azul primario */
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   text-transform: uppercase;
-  letter-spacing: 1.2px;
-  background: linear-gradient(to right, #4a90e2, #3ab2a6);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  letter-spacing: 1.5px;
 }
 
 /* Indicador de progreso */
 .contador-preguntas {
   font-size: 1.2rem;
   font-weight: 600;
-  color: #5f6975;
+  color: #6c757d; /* Gris medio */
   margin-bottom: 15px;
 }
 
 /* Barra de progreso */
 .barra-progreso {
   width: 100%;
-  height: 10px;
-  background-color: #eaeff4;
-  border-radius: 5px;
-  margin-bottom: 25px;
+  height: 12px;
+  background-color: #e9ecef; /* Gris claro */
+  border-radius: 6px;
+  margin-bottom: 30px;
   overflow: hidden;
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.1);
 }
 
 .progreso {
   height: 100%;
-  background: linear-gradient(90deg, #4a90e2, #3ab2a6);
+  background-color: #007bff; /* Azul primario */
   transition: width 0.4s ease;
-  border-radius: 5px;
-  box-shadow: 0 2px 6px rgba(74, 144, 226, 0.3);
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 123, 255, 0.3);
 }
 
 /* Contenedor de la dimensión */
@@ -71,16 +69,16 @@ html {
 }
 
 .dimension-titulo {
-  font-size: 1rem; /* Pequeño y discreto */
+  font-size: 1.2rem;
   font-weight: 600;
-  color: #2c3e50;
+  color: #343a40; /* Gris oscuro */
   text-transform: uppercase;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
 .dimension-texto {
-  font-size: 1rem; /* Ajustado para claridad */
-  color: #5f6975;
+  font-size: 1rem;
+  color: #6c757d; /* Gris medio */
   font-weight: 500;
   line-height: 1.6;
 }
@@ -88,33 +86,33 @@ html {
 /* Contenedor de la pregunta */
 .pregunta-container {
   background-color: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-  max-width: 750px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
   width: 100%;
-  min-height: 250px;
+  min-height: 280px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  padding: 25px;
-  margin: 20px auto;
+  padding: 30px;
+  margin: 25px auto;
   box-sizing: border-box;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .pregunta-container:hover {
   transform: translateY(-5px);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
 }
 
 /* Título de la pregunta */
 .pregunta-title {
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   font-weight: 700;
-  color: #2c3e50;
+  color: #343a40; /* Gris oscuro */
   text-align: center;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   line-height: 1.5;
 }
 
@@ -122,28 +120,28 @@ html {
 .pregunta-buttons {
   display: flex;
   flex-wrap: wrap;
-  gap: 15px;
+  gap: 20px;
   justify-content: center;
 }
 
 /* Botones de opciones */
 .pregunta-opcion {
-  background-color: #4a90e2;
+  background-color: #007bff; /* Azul primario */
   color: white;
   border: none;
   border-radius: 25px;
-  padding: 12px 20px;
+  padding: 15px 25px;
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 5px 10px rgba(74, 144, 226, 0.3);
+  box-shadow: 0 6px 15px rgba(0, 123, 255, 0.3);
 }
 
 .pregunta-opcion:hover {
-  background-color: #3a78c5;
-  transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(58, 120, 197, 0.4);
+  background-color: #0056b3; /* Azul oscuro */
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 86, 179, 0.4);
 }
 
 .pregunta-opcion:active {
@@ -154,30 +152,30 @@ html {
 .botones-navegacion {
   display: flex;
   justify-content: space-between;
-  gap: 20px;
+  gap: 25px;
   width: 100%;
-  margin-top: 20px;
+  margin-top: 25px;
 }
 
 .btn-regresar,
 .btn-continuar {
-  background-color: #3ab2a6;
+  background-color: #007bff; /* Azul primario */
   color: white;
   border: none;
   border-radius: 25px;
-  padding: 12px 25px;
+  padding: 15px 30px;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 5px 15px rgba(58, 178, 166, 0.3);
+  box-shadow: 0 6px 18px rgba(0, 123, 255, 0.3);
 }
 
 .btn-regresar:hover,
 .btn-continuar:hover {
-  background-color: #329488;
-  transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(50, 148, 136, 0.4);
+  background-color: #0056b3; /* Azul oscuro */
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 86, 179, 0.4);
 }
 
 .btn-regresar:active,
@@ -187,7 +185,7 @@ html {
 
 /* Mensajes de error */
 .error-mensaje {
-  color: #e63946;
+  color: #e63946; /* Rojo vibrante */
   font-size: 1rem;
   font-weight: 500;
   margin-top: 10px;
@@ -196,25 +194,25 @@ html {
 /* Responsivo */
 @media (max-width: 768px) {
   .diagnostico-container h2 {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 
   .pregunta-container {
-    max-width: 95%;
-    min-height: 250px;
+    max-width: 90%;
+    min-height: 260px;
   }
 
   .btn-regresar,
   .btn-continuar {
-    font-size: 0.9rem;
-    padding: 10px 15px;
+    font-size: 0.95rem;
+    padding: 12px 20px;
   }
 }
 
 @media (max-width: 576px) {
   .pregunta-container {
     max-width: 95%;
-    min-height: 200px;
+    min-height: 220px;
   }
 
   .pregunta-title {
@@ -223,6 +221,6 @@ html {
 
   .pregunta-opcion {
     font-size: 0.9rem;
-    padding: 8px 15px;
+    padding: 10px 18px;
   }
 }

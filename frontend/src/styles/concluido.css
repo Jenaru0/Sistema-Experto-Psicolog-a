@@ -2,79 +2,70 @@
 .concluido-container {
     text-align: center;
     margin: 50px auto;
-    max-width: 800px;
-    padding: 40px;
-    background: linear-gradient(135deg, #ffffff, #f7f9fc); /* Gradiente suave */
-    border-radius: 20px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); /* Sombra destacada */
-    animation: fadeIn 1s ease; /* Animación al aparecer */
+    max-width: 600px;
+    padding: 30px;
+    background: #f8f9fa; /* Fondo gris claro */
+    border-radius: 10px; /* Bordes suaves */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    font-family: 'Montserrat', sans-serif; /* Tipografía consistente */
 }
 
 /* Título */
 .concluido-container h2 {
-    color: #e74c3c;
-    font-size: 2.4rem; /* Tamaño más destacado */
-    margin-bottom: 30px;
-    font-weight: bold;
-    letter-spacing: 1px; /* Espaciado entre letras */
+    color: #007bff; /* Azul vibrante */
+    font-size: 2rem; /* Tamaño consistente con otros títulos */
+    margin-bottom: 20px;
+    font-weight: 700;
+    letter-spacing: 0.5px; /* Espaciado moderado */
+    text-transform: none; /* Sin mayúsculas */
 }
 
 /* Texto descriptivo */
 .concluido-container p {
-    font-size: 1.2rem;
-    color: #7f8c8d;
+    font-size: 1.1rem;
+    color: #6c757d; /* Gris medio */
     margin-bottom: 20px;
-    line-height: 1.8; /* Mejora legibilidad */
+    line-height: 1.8; /* Mejor legibilidad */
+    text-align: center;
 }
 
 /* Botón */
-.concluido-container .btn {
-    padding: 15px 40px;
-    font-size: 1.2rem;
+.concluido-container .btn-primary {
+    padding: 12px 35px;
+    font-size: 1rem;
     font-weight: 600;
-    border-radius: 30px;
+    border-radius: 8px; /* Bordes menos curvados */
     border: none;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Sombra inicial */
-}
-
-/* Botón principal */
-.concluido-container .btn-primary {
-    background: linear-gradient(135deg, #3498db, #6dd5fa);
+    background-color: #007bff; /* Azul principal */
     color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra inicial */
 }
 
+/* Hover en el botón */
 .concluido-container .btn-primary:hover {
-    background: linear-gradient(135deg, #2980b9, #3498db);
-    transform: translateY(-3px); /* Efecto de elevación */
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2); /* Sombra más intensa */
-}
-
-/* Animaciones */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    background-color: #0056b3; /* Azul más oscuro */
+    transform: translateY(-2px); /* Elevación ligera */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Sombra más intensa */
 }
 
 /* Responsive */
 @media (max-width: 768px) {
     .concluido-container {
-        padding: 30px;
+        padding: 20px;
     }
 
     .concluido-container h2 {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
-    .concluido-container .btn {
+    .concluido-container p {
         font-size: 1rem;
-        padding: 12px 30px;
+    }
+
+    .concluido-container .btn-primary {
+        font-size: 0.9rem;
+        padding: 10px 25px;
     }
 }

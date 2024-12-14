@@ -51,7 +51,7 @@ function PaginaResultados({ onReiniciar }) {
 
   const handleReiniciar = () => {
     onReiniciar();
-    navigate("/cuestionario");
+    navigate("/formulario");
   };
 
   if (!resultado) {
