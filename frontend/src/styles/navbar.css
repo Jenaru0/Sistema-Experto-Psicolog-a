@@ -13,10 +13,14 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra elegante */
     border-bottom: 2px solid #4b5563; /* Línea inferior sutil */
     box-sizing: border-box; /* Incluye padding en el ancho total */
-    overflow: hidden; /* Evita desbordamientos */
-    position: sticky;
-    top: 0;
-    z-index: 1030;
+}
+
+/* Ajustamos el body para evitar cualquier espacio o conflicto */
+body {
+    margin: 0; /* Eliminamos márgenes por defecto */
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden; /* Evitamos scroll horizontal */
 }
 
 /* Logo y marca */
@@ -53,8 +57,6 @@
     padding: 0;
     flex-wrap: nowrap; /* Evita que las opciones se acomoden en múltiples líneas */
     white-space: nowrap; /* Asegura que las opciones no se dividan */
-    overflow: hidden; /* Evita cualquier desbordamiento */
-    flex-grow: 1; /* Ocupa todo el espacio disponible */
 }
 
 /* Opciones del menú */

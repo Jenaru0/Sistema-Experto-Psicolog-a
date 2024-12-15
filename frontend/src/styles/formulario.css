@@ -3,7 +3,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: calc(100vh - 120px); /* Ajusta altura considerando el header */
+  height: calc(100vh - 130px); /* Ajusta altura considerando el header */
   background: linear-gradient(135deg, #f8f9fa, #ffffff); /* Fondo claro */
   padding: 20px;
   box-sizing: border-box;
