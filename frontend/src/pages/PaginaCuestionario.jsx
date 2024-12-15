@@ -1,17 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { enviarRespuestas } from "../utils/api";
 import preguntas from "../data/preguntas";
 import "../styles/cuestionario.css";
 import Pregunta from "../Pregunta";
 import { useNavigate } from "react-router-dom";
 
-function PaginaCuestionario({ respuestas, setRespuestas }) {
+function PaginaCuestionario({ respuestas, setRespuestas, usuario }) {
   const [indice, setIndice] = useState(0);
   const [cargando, setCargando] = useState(false);
   const [error, setError] = useState(""); // Manejo de errores
   const navigate = useNavigate();
 
-  // Descripciones de contexto para cada dimensión
+  useEffect(() => {
+    if (!usuario.nombre?.trim() || !usuario.edad || isNaN(usuario.edad)) {
+      navigate("/formulario");
+    }
+  }, [usuario, navigate]);
+
   const descripciones = {
     filtro: "Por favor, responde a la siguiente pregunta para continuar con el cuestionario.",
     intensidad: "Señala tu nivel de preocupación o nerviosismo en una escala del 1 al 5, donde 1 es poco y 5 es mucho.",
@@ -22,7 +27,6 @@ function PaginaCuestionario({ respuestas, setRespuestas }) {
     estrategia_afrontamiento: "Señala con qué frecuencia utilizaste las siguientes estrategias de afrontamiento:",
   };
 
-  // Mapeo de dimensiones
   const dimensiones = {
     filtro: "Filtro",
     intensidad: "Intensidad",
@@ -38,32 +42,20 @@ function PaginaCuestionario({ respuestas, setRespuestas }) {
       setError("Debes seleccionar una respuesta antes de continuar.");
       return;
     }
-    setError(""); // Limpiar errores si hay respuesta
 
+    setError("");
     const preguntaActual = preguntas[indice];
     const nuevas = { ...respuestas, [preguntaActual.key]: valor };
     setRespuestas(nuevas);
 
-    // Verificar si es la primera pregunta ("filtro")
-    if (preguntaActual.key === "filtro") {
-      if (valor === 1) {
-        // Redirigir a la página de conclusión si la respuesta es "No"
-        navigate("/concluido");
-        return;
-      }
-      if (valor === 5) {
-        // Avanzar a la segunda pregunta (intensidad)
-        setIndice(indice + 1);
-        return;
-      }
+    if (preguntaActual.key === "filtro" && valor === 1) {
+      navigate("/concluido");
+      return;
     }
 
-    // Continuar con el flujo normal
-    let nuevoIndice = indice + 1;
-    if (nuevoIndice < preguntas.length) {
-      setIndice(nuevoIndice);
+    if (indice + 1 < preguntas.length) {
+      setIndice(indice + 1);
     } else {
-      // Enviar respuestas al backend si es la última pregunta
       enviarDatos(nuevas);
     }
   };
@@ -71,20 +63,35 @@ function PaginaCuestionario({ respuestas, setRespuestas }) {
   const handleRegresar = () => {
     if (indice > 0) {
       setIndice(indice - 1);
-      setError(""); // Limpiar errores al regresar
+      setError("");
     }
   };
 
   const enviarDatos = async (resp) => {
     setCargando(true);
     try {
-      const resultado = await enviarRespuestas(resp);
-      navigate(
-          "/resultados?data=" + encodeURIComponent(JSON.stringify(resultado))
-      );
+      const datosCompletos = {
+        usuario: {
+          nombre: usuario.nombre.trim(),
+          edad: parseInt(usuario.edad, 10),
+        },
+        respuestas: resp,
+      };
+
+      console.log("Datos enviados al backend:", datosCompletos);
+
+      const resultado = await enviarRespuestas(datosCompletos);
+
+      if (resultado.error) {
+        setError(resultado.mensaje || "Error desconocido al procesar los datos.");
+      } else {
+        navigate(
+            "/resultados?data=" + encodeURIComponent(JSON.stringify(resultado))
+        );
+      }
     } catch (error) {
-      console.error("Error enviando respuestas", error);
-      alert("Ocurrió un error al enviar las respuestas.");
+      console.error("Error enviando respuestas:", error);
+      setError("Ocurrió un error al enviar las respuestas. Por favor, intenta nuevamente.");
     } finally {
       setCargando(false);
     }
@@ -92,7 +99,6 @@ function PaginaCuestionario({ respuestas, setRespuestas }) {
 
   const progreso = ((indice + 1) / preguntas.length) * 100;
 
-  // Obtener la dimensión y el contexto de la pregunta actual
   const preguntaActual = preguntas[indice];
   const contexto = preguntaActual ? descripciones[preguntaActual.tipo] : "";
   const dimension = preguntaActual ? dimensiones[preguntaActual.tipo] : "";
@@ -101,17 +107,14 @@ function PaginaCuestionario({ respuestas, setRespuestas }) {
       <div className="diagnostico-container">
         <h2>Cuestionario - Inventario SISCO</h2>
 
-        {/* Indicador de pregunta */}
         <p className="contador-preguntas">
           Pregunta {indice + 1} de {preguntas.length}
         </p>
 
-        {/* Barra de progreso */}
         <div className="barra-progreso">
           <div className="progreso" style={{ width: `${progreso}%` }}></div>
         </div>
 
-        {/* Dimensión y contexto */}
         {dimension && (
             <div className="dimension-contexto-container">
               <p className="dimension-titulo">Dimensión: {dimension}</p>
@@ -120,31 +123,19 @@ function PaginaCuestionario({ respuestas, setRespuestas }) {
         )}
 
         {cargando && <p>Enviando respuestas...</p>}
-
-        {/* Mostrar mensaje de error si no hay respuesta */}
         {error && <p className="error-mensaje">{error}</p>}
 
-        {/* Renderizar la pregunta */}
-        {preguntas[indice] && (
+        {preguntaActual && (
             <Pregunta
-                pregunta={preguntas[indice]}
+                pregunta={preguntaActual}
                 handleRespuesta={handleRespuesta}
             />
         )}
 
-        {/* Botones de navegación */}
         <div className="botones-navegacion">
           {indice > 0 && (
-              <button className="btn-regresar" onClick={handleRegresar}>
+              <button className="btn-regresar" onClick={handleRegresar} disabled={cargando}>
                 Regresar
-              </button>
-          )}
-          {indice < preguntas.length - 1 && (
-              <button
-                  className="btn-continuar"
-                  onClick={() => handleRespuesta(null)}
-              >
-                Continuar
               </button>
           )}
         </div>
