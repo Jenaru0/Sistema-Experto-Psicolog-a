@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../styles/hero.css";
+import "../styles/inicio.css";
 import "../styles/cards.css";
 
 function Inicio() {
