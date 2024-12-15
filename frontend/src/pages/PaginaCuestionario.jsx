@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { enviarRespuestas } from "../utils/api";
 import preguntas from "../data/preguntas";
-import "../styles/diagnostico.css";
+import "../styles/cuestionario.css";
 import Pregunta from "../Pregunta";
 import { useNavigate } from "react-router-dom";
 
