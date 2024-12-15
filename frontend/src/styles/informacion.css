@@ -16,7 +16,6 @@
   font-weight: 700;
   margin-bottom: 30px;
   text-align: center;
-  font-family: 'Montserrat', sans-serif;
 }
 
 /* Secciones */
@@ -25,12 +24,11 @@
 }
 
 /* Títulos de sección */
-.informacion-container .section-title {
+.informacion-container h2 {
   color: #007bff; /* Azul principal */
   font-size: 1.8rem;
   font-weight: 600;
   margin-bottom: 15px;
-  text-align: left;
   border-bottom: 2px solid #007bff; /* Línea de separación */
   padding-bottom: 5px;
 }
@@ -45,36 +43,21 @@
 }
 
 /* Listas */
-.informacion-container .list {
+.informacion-container ul {
   margin-left: 20px;
   list-style-type: disc; /* Viñetas */
   font-size: 1.1rem;
   color: #6c757d; /* Gris medio */
 }
 
-.informacion-container .list li {
+.informacion-container ul li {
   margin-bottom: 10px;
-}
-
-/* Subtítulos */
-.informacion-container .sub-title {
-  font-size: 1.6rem;
-  font-weight: 600;
-  margin-top: 25px;
-  color: #007bff; /* Azul principal */
 }
 
 /* Texto en negrita */
 .informacion-container strong {
   font-weight: bold;
   color: #343a40; /* Gris oscuro */
-}
-
-/* Ajustes en los títulos */
-.informacion-container .sub-title,
-.informacion-container .section-title {
-  font-size: 1.6rem;
-  font-family: 'Montserrat', sans-serif; /* Fuente profesional */
 }
 
 /* Ajustes Responsivos */
@@ -88,7 +71,7 @@
     font-size: 2rem;
   }
 
-  .informacion-container .section-title {
+  .informacion-container h2 {
     font-size: 1.5rem;
   }
 
@@ -96,11 +79,7 @@
     font-size: 1rem;
   }
 
-  .informacion-container .sub-title {
-    font-size: 1.2rem;
-  }
-
-  .informacion-container .list {
+  .informacion-container ul {
     margin-left: 15px;
   }
 }
@@ -115,22 +94,15 @@
     font-size: 1.8rem;
   }
 
-  .informacion-container .section-title {
+  .informacion-container h2 {
     font-size: 1.4rem;
   }
 
-  .informacion-container .sub-title {
-    font-size: 1.1rem;
+  .informacion-container p {
+    font-size: 1rem;
   }
 
-  .informacion-container .list {
+  .informacion-container ul {
     margin-left: 10px;
   }
-}
-
-/* Transiciones */
-.page {
-  transition: opacity 0.5s ease-in-out;
-  height: 100%;
-  overflow: hidden; /* Para evitar cortes */
 }
